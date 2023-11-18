@@ -9,7 +9,7 @@ public class Sequence {
         int min = Integer.MAX_VALUE, max = Integer.MIN_VALUE, sum = 0, mean = 0;
         String str;
         while (go) {
-            str=scanner.nextLine();
+            str = scanner.nextLine();
             if (str.isEmpty()) {
                 go = false;
             } else {
