@@ -3,17 +3,17 @@ package tasks1;
 import java.util.Scanner;
 
 public class Countdown {
-    private static String[] format(int count) {
+    private static String format(int count, int format) {
         String[] str = switch (count % 10) {
             case 1 -> new String[]{" день ", " час ", " минута "};
             case 2, 3, 4 -> new String[]{" деня ", " часа ", " минуты "};
             case 5, 6, 7, 8, 9, 0 -> new String[]{" деней ", " часов ", " минутут "};
-            default -> null;
+            default -> throw new IllegalStateException("Unexpected value: " + count % 10);
         };
         if ((count % 100) > 10 && (count % 100) < 20) {
             str = new String[]{" деней ", " часов ", " минутут "};
         }
-        return str;
+        return str[format];
     }
 
     public static void main(String[] args) {
@@ -29,7 +29,8 @@ public class Countdown {
             int hours = remainingMinutes / 60;
             remainingMinutes = remainingMinutes % 60;
             System.out.println(remainingMinutes);
-            System.out.println(minutes + " минут это " + days + format(days)[0] + hours + format(hours)[1] + remainingMinutes + format(remainingMinutes)[2]);
+            System.out.println(minutes + " минут это " + days + format(days, 0) + hours + format(hours, 1)
+                    + remainingMinutes + format(remainingMinutes, 2));
         }
     }
 }
