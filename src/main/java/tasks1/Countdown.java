@@ -6,12 +6,12 @@ public class Countdown {
     private static String format(int count, int format) {
         String[] str = switch (count % 10) {
             case 1 -> new String[]{" день ", " час ", " минута "};
-            case 2, 3, 4 -> new String[]{" деня ", " часа ", " минуты "};
-            case 5, 6, 7, 8, 9, 0 -> new String[]{" деней ", " часов ", " минутут "};
+            case 2, 3, 4 -> new String[]{" дня ", " часа ", " минуты "};
+            case 5, 6, 7, 8, 9, 0 -> new String[]{" дней ", " часов ", " минут "};
             default -> throw new IllegalStateException("Unexpected value: " + count % 10);
         };
         if ((count % 100) > 10 && (count % 100) < 20) {
-            str = new String[]{" деней ", " часов ", " минутут "};
+            str = new String[]{" дней ", " часов ", " минут "};
         }
         return str[format];
     }
