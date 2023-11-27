@@ -12,9 +12,9 @@ public class Rounding {
         System.out.println("Math.round(double a): " + Math.round(30.0) + ",   " + Math.round(10000.1) + ",   " + Math.round(12.5)
                 + ",   " + Math.round(99.99) + ",   " + Math.round(0.0) + ",   " + Math.round(-23.45) + ",    " + Math.round(-4.5)
                 + ",   " + Math.round(-129.675));
-        System.out.println("Math.round(float a):  " + Math.round(30.0f) + ",   " + Math.round(10000.1f) + ",   " + Math.round(12.5f)
-                + ",   " + Math.round(99.99f) + ",   " + Math.round(0.0f) + ",   " + Math.round(-23.45f) + ",    " + Math.round(-4.5f)
-                + ",   " + Math.round(-129.675f));
+        System.out.println("Math.rint(double a):  " + Math.rint(30.0) + ", " + Math.rint(10000.1) + ", " + Math.rint(12.5)
+                + ", " + Math.rint(99.99) + ", " + Math.rint(0.0) + ", " + Math.rint(-23.45) + ",  " + Math.rint(-4.5)
+                + ", " + Math.rint(-129.675));
     }
 
     public static void main(String[] args) {
