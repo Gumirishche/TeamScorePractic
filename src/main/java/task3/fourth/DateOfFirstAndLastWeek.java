@@ -23,21 +23,21 @@ public class DateOfFirstAndLastWeek {
         return new LocalDate[]{lastMondayOfYear, lastSundayOfYear};
     }
 
-    public LocalDate[] weekOfNumber(int number, LocalDate date){
+    public LocalDate[] weekOfNumber(int number, LocalDate date) {
         LocalDate[] firstWeekOfYear = new DateOfFirstAndLastWeek().firstWeekOfYear(date);
         LocalDate[] lastWeekOfYear = new DateOfFirstAndLastWeek().lastWeekOfYear(date);
-        LocalDate mondayOfNumber = firstWeekOfYear[0].plusDays(7L *(number-1));
-        if(mondayOfNumber.isAfter(lastWeekOfYear[0])){
+        LocalDate mondayOfNumber = firstWeekOfYear[0].plusDays(7L * (number - 1));
+        if (mondayOfNumber.isAfter(lastWeekOfYear[0])) {
             return lastWeekOfYear;
-        }else {
-            return new LocalDate[]{mondayOfNumber,mondayOfNumber.plusDays(6)};
+        } else {
+            return new LocalDate[]{mondayOfNumber, mondayOfNumber.plusDays(6)};
         }
     }
 
     public static void main(String[] args) {
         //System.out.println(LocalDate.from(DateTimeFormatter.ISO_WEEK_DATE.parse("2024-02-1")));
         String str = "2024-W15-1";
-        int c = Integer.parseInt(str.toCharArray()[6]+""+str.toCharArray()[7]);
+        int c = Integer.parseInt(str.toCharArray()[6] + "" + str.toCharArray()[7]);
         System.out.println(c);
         //System.out.println(LocalDate.parse("2024-W02-1"));
         //System.out.println(Arrays.toString(new DateOfFirstAndLastWeek().firstWeekOfYear(LocalDate.parse("2023-08-15"))));
